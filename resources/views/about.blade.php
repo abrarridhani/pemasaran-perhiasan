@@ -158,39 +158,19 @@
 
     <!-- Main Content -->
     <div class="d-flex flex-wrap justify-content-center">
-        <div class="programmer-card">
-            <img src="{{ asset('storage/profil/abrar.png') }}" alt="Muhammad Abrar Ridhani">
-            <div>
-                <h3>Programmer 1</h3>
-                <p><strong>Nama : </strong>Muhammad Abrar Ridhani<br>
-                    <strong>NIM : </strong>C030323137<br><br>
-                    <strong>Bio : </strong>Saya adalah mahasiswa semester 3 yang penuh semangat dalam menjelajahi dan
-                    menguasai dunia pemrograman. Dengan minat yang mendalam pada pengembangan web dan aplikasi mobile,
-                    saya terus berusaha menciptakan solusi inovatif dan efektif. Saya menikmati bekerja dalam tim,
-                    mengikuti perkembangan teknologi terkini, serta mengaplikasikan ide-ide kreatif untuk menyelesaikan
-                    berbagai tantangan.<br>
-                    <strong>Keahlian : </strong>Frontend, API Integration, Database Management.
-                </p>
-
+        @foreach ($abouts as $about)
+            <div class="programmer-card">
+                <img src="{{ asset('storage/' . $about->gambar) }}" alt="{{ $about->nama }}">
+                <div>
+                    <h3>{{ $about->nama }}</h3>
+                    <p><strong>Nama : </strong>{{ $about->nama }}<br>
+                        <strong>NIM : </strong>{{ $about->nim }}<br><br>
+                        <strong>Bio : </strong>{{ $about->bio }}<br>
+                        <strong>Keahlian : </strong>{{ $about->keahlian }}
+                    </p>
+                </div>
             </div>
-        </div>
-
-        <div class="programmer-card">
-            <img src="{{ asset('storage/profil/wilda.png') }}" alt="Wilda Salma">
-            <div>
-                <h3>Programmer 2</h3>
-                <p><strong>Nama : </strong>Wilda Salma<br>
-                    <strong>NIM : </strong>C030323062<br><br>
-                    <strong>Bio : </strong>Saya adalah mahasiswa semester 3 yang penuh semangat dalam menjelajahi dan
-                    menguasai dunia pemrograman. Dengan minat yang mendalam pada pengembangan web dan aplikasi mobile,
-                    saya terus berusaha menciptakan solusi inovatif dan efektif. Saya menikmati bekerja dalam tim,
-                    mengikuti perkembangan teknologi terkini, serta mengaplikasikan ide-ide kreatif untuk menyelesaikan
-                    berbagai tantangan.<br>
-                    <strong>Keahlian : </strong>Web Design, User Experience.
-                </p>
-            </div>
-        </div>
-    </div>
+        @endforeach
     </div>
 
     <!-- Footer -->
